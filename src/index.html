@@ -8,20 +8,37 @@
 </head>
 <body>
     <h1>Gestor de Tareas</h1>
-
+    <h2 id="phrases"></h2>
+    <hr>
     <section class="main">
         <section>
-            <form action="#" method="POST" class="task-body">
+            <form action="#" method="POST" id="task-body">
                 <label for="title">Título</label>
                 <input type="text" id="title">
-                <label for="description"></label>
+                <br>
+                <br>
+                <label for="description">Descripción</label>
+                <br>
                 <textarea id="description" placeholder="Descripción de lo que debes hacer"></textarea>
+                <br>
+                <br>
                 <label for="date">Fecha límite</label>
                 <input type="date" id="date">
+                <br>
+                <br>
                 <button id="submit">Guardar</button>
             </form>
         </section>
-        <section id="tasks"></section>
+        <hr>
+        <section id="find">
+            <h3>Buscar tareas por usuario</h3>
+            <label for="user">User</label>
+            <input type="text" name="" id="user">
+            <button id="user_button">enviar</button>
+            <section id="tasks">  
+            </section>
+        </section>
     </section>
+    <script src="./assets/index.js" type="module"></script>
 </body>
 </html>
