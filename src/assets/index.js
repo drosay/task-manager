@@ -5,7 +5,7 @@ import { phrases } from "./phrases.js";
 const users = [];
 
 window.onload = () =>{
-    document.getElementById("phrases").innerText = phrases[Math.floor(Math.random()*7)];
+    document.getElementById("phrases").innerText = phrases[Math.floor(Math.random()*14)];
     document.getElementById("title").value = '';
     document.getElementById("description").value ='';
     document.getElementById("date").value = '';
