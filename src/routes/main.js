@@ -3,7 +3,7 @@ const path = require("path"); //y el de path tambien
 
 router.get("/", (req,res) =>{ //con el modulo router creamos una ruta para la página principal
 
-    res.send(`Indice`);
+    res.render("index");
 });
 router.get("/contacto", (req,res) =>{
 
