@@ -4,7 +4,7 @@
   "description": "Aplicación web de manejo de tareas",
   "main": "index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon src/index.js"
   },
   "repository": {
     "type": "git",
@@ -19,5 +19,17 @@
   "bugs": {
     "url": "https://github.com/drosay/task-manager/issues"
   },
-  "homepage": "https://github.com/drosay/task-manager#readme"
+  "homepage": "https://github.com/drosay/task-manager#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "connect-flash": "^0.1.1",
+    "express": "^4.17.2",
+    "express-handlebars": "^6.0.2",
+    "express-session": "^1.17.2",
+    "method-override": "^3.0.0",
+    "mongoose": "^6.1.5",
+    "nodemon": "^2.0.15",
+    "passport": "^0.5.2",
+    "passport-local": "^1.0.0"
+  }
 }
