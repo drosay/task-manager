@@ -1,20 +1,34 @@
-<section class="main">
-    <section>
-        <form id="task-body">
-            <label for="title">Título</label>
-            <input type="text" id="title">
+
+    {{#each error}}
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <strong>{{error}}</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    {{/each}}
+<div class="col-md-5 mx-auto">
+    <section class="card">
+    <div class="card-header">
+        <h3 id="form-title">Nueva tarea</h3>
+    </div>
+    <section class="card-body">
+        <form action="/tareas/nuevo" method="POST" id="task-body">
+            <div class="form-group">
+                <label for="title">Título</label>
+                <input type="text" class="form-control" name="title" id="title" autofocus autocapitalize="words" minlength="5" placeholder="foo" value="{{title}}">
+            </div>
             <br>
+            <div class="form-group">
+                <label for="description">Descripción</label>
+                <textarea class="form-control" id="description" name="description" placeholder="foo" minlength="30" maxlength="255">{{description}}</textarea>
+            </div>
             <br>
-            <label for="description">Descripción</label>
+            <div class="form-group">
+                <label for="date">Fecha límite</label>
+                <input type="date" class="form-control" name="deadline" id="deadline" value="{{deadline}}">
+            </div>
             <br>
-            <textarea id="description" placeholder="Descripción de lo que debes hacer"></textarea>
-            <br>
-            <br>
-            <label for="date">Fecha límite</label>
-            <input type="date" id="date">
-            <br>
-            <br>
-            <button id="submit">Guardar</button>
+            <button type="submit" class="btn btn-primary" id="submit">Guardar</button>
         </form>
     </section>
 </section>
+</div>
