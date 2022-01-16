@@ -1,7 +1,25 @@
+const phrases = [
+    "No te canses, sigue adelante porque la victoria que te espera es grande.",
+    "Lee poco y serás como muchos… lee mucho y serás como pocos.",
+    "No te rindas nunca porque nunca sabes si el próximo intento será el que funcionará.",
+    "Todos nuestros sueños se pueden hacer realidad si tenemos el coraje de perseguirlos.",
+    "El éxito es la suma de pequeños esfuerzo repetidos día tras día.",
+    "Los errores no son fracasos, son señal de que lo estamos intentando.",
+    "El genio se hace con un 1% de talento, y un 99% de trabajo.",
+    "Todo es posible en la medida que tú creas que es posible.",
+    "Nunca consideres el estudio como una obligación, sino como una oportunidad para penetrar en el bello y maravilloso mundo del saber.",
+    "Trabaja duro en silencio y deja que tu éxito haga todo el ruido.",
+    "Cree en ti mismo y en lo que eres. Se consciente de que hay algo en tu interior que es más grande que cualquier obstáculo.",
+    "Si el plan no funciona, cambia el plan, pero no cambies la meta.",
+    "Continua estudiando, el cansancio es temporal, la satisfacción es para siempre.",
+    "No digas que no tienes suficiente tiempo. Tienes exactamente el mismo número de horas que tuvieron Pasteur, Michelangelo, Helen Keller, Madre Teresa, Leonardo da Vinci, Thomas Jefferson y Albert Einstein.",
+];
+window.onload = () =>{
+    document.getElementById("phrases").innerText = phrases[Math.floor(Math.random()*14)];
+}
 /*
 import { Task } from "./task.js";
 import { User } from "./user.js";
-import { phrases } from "./phrases.js";
 
 const user = new User({
     username:"Dylank5",
@@ -12,12 +30,6 @@ const user = new User({
 
 const users = [user];
 
-window.onload = () =>{
-    document.getElementById("phrases").innerText = phrases[Math.floor(Math.random()*14)];
-    document.getElementById("title").value = '';
-    document.getElementById("description").value ='';
-    document.getElementById("date").value = '';
-}
 
 document.getElementById("task-body").addEventListener("submit", (e) => {
     e.preventDefault();

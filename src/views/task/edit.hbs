@@ -1,0 +1,28 @@
+<div class="col-md-5 mx-auto">
+    <section class="card">
+    <div class="card-header">
+        <h3 id="form-title">Editar tarea</h3>
+    </div>
+    <section class="card-body">
+        <form action="tareas/editar-tarea/{{task._id}}?_method=PUT" method="POST" id="task-body">
+            <input type="hidden" name="_method" value="PUT">
+            <div class="form-group">
+                <label for="title">Nuevo título</label>
+                <input type="text" class="form-control" name="title" id="title" autofocus autocapitalize="words" minlength="5" placeholder="foo" value="{{task.title}}">
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="description">Nueva descripción</label>
+                <textarea class="form-control" id="description" name="description" placeholder="foo" minlength="30" maxlength="255">{{task.description}}</textarea>
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="date">Nueva fecha límite</label>
+                <input type="date" class="form-control" name="deadline" id="deadline" value="{{task.deadline}}">
+            </div>
+            <br>
+            <button type="submit" class="btn btn-primary" id="submit">Guardar</button>
+        </form>
+    </section>
+</section>
+</div>

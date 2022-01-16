@@ -1,0 +1,27 @@
+{{#if task}}
+    <div class="btn-group mb-4">
+        <a href="/" class="btn btn-primary">Inicio</a>
+        <a href="/tarea" class="btn btn-secondary">Nueva tarea</a>
+    </div>
+    <div class="row align-items-start">
+        {{#each task}}
+            <div class="col-4">
+                <div class="card">
+                    <div class="cardbody">
+                        <h3 class="card-title px-3 d-flex justify-content-between">{{title}} <a href="tareas/editar/{{_id}}"><i class="fas fa-pen-square"></i></a></h3>
+                        <h6 class="card-subtitle text-muted mb-2 ps-3">Fecha Límite: {{deadline}} </h6>
+                        <p class="card-text ps-3">{{description}}</p>
+                        <div class="card-footer text-muted">
+                        Fecha de edición: {{date}}
+                        </div>
+                        <div class="d-grid">
+                        <button class="btn btn-danger btn-block btn-sm"><a href="/tareas/borrar/{{_id}}_method=DELETE">Borrar</a></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {{/each}} 
+    </div>
+{{else}}
+    <h2 class="mt-4">OPPS! Amigo, creo que no tienes niguna tarea, no quisieras ingresar una <a href="/tarea">Nueva tarea?</a></h2>
+{{/if}}

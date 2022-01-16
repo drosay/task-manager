@@ -24,7 +24,7 @@ application.set("view engine",".hbs");//y le decimos a express los handlebars qu
 application.use(express.urlencoded({
     extended:false
 }));
-application.use(override("_method")); //aquí sobreescribimos los metodos de get y post
+application.use(override("_method")); //aquí sobreescribimos los metodos de get y post porque reviza el input con el name method y toma el valor que tiene para hacer cierta consulta en el servidor
 
 //aqui configuramos la session en express
 application.use(session({
