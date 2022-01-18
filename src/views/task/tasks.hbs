@@ -14,9 +14,12 @@
                         <div class="card-footer text-muted">
                         Fecha de edición: {{date}}
                         </div>
-                        <div class="d-grid">
-                        <button class="btn btn-danger btn-block btn-sm"><a href="/tareas/borrar/{{_id}}_method=DELETE">Borrar</a></button>
-                        </div>
+                        <form action="/tareas/borrar/{{_id}}?_method=DELETE" method="POST" >
+                            <input type="hidden" name="_method" value="DELETE">
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-danger btn-block btn-sm">Borrar</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>

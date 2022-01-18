@@ -20,11 +20,12 @@ application.engine(".hbs", exphbs.engine({
 }));
 application.set("view engine",".hbs");//y le decimos a express los handlebars que va a usar y sus direcciónes
 
-//Funciones
+//Middlewares
+//Es una función que se ejecuta antes o durante el flujo de una petición en express js
 application.use(express.urlencoded({
     extended:false
 }));
-application.use(override("_method")); //aquí sobreescribimos los metodos de get y post porque reviza el input con el name method y toma el valor que tiene para hacer cierta consulta en el servidor
+application.use(override("_method")); //Sobreescribir los metodos
 
 //aqui configuramos la session en express
 application.use(session({

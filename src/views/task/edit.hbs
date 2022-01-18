@@ -4,7 +4,7 @@
         <h3 id="form-title">Editar tarea</h3>
     </div>
     <section class="card-body">
-        <form action="tareas/editar-tarea/{{task._id}}?_method=PUT" method="POST" id="task-body">
+        <form action="/tareas/editar-tarea/{{task._id}}?_method=PUT" method="POST" id="task-body">
             <input type="hidden" name="_method" value="PUT">
             <div class="form-group">
                 <label for="title">Nuevo título</label>

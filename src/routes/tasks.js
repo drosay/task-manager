@@ -42,17 +42,15 @@ router.get("/tareas/editar/:id", async (req,res)=>{
 //Actualizar tarea
 router.put("/tareas/editar-tarea/:id", async (req,res)=>{
     const {title,description,deadline} = req.body;
-    console.log(req.body);
     const date = new Date();
     await taskModel.findByIdAndUpdate(req.params.id,{title,description,deadline,date});
     res.redirect("/tareas");    
 });
 
 //Borrar tarea
-/*
 router.delete("/tareas/borrar/:id", async (req,res)=>{
-    await taskModel.deleteOne({"_id": ObjectId(`${req.params.id}`)});
+    // await taskModel.deleteOne({"_id": ObjectId(`${req.params.id}`)});
+    await taskModel.findByIdAndDelete(req.params.id);
     res.redirect("/tareas");
 });
-*/
 module.exports = router;
