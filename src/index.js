@@ -3,13 +3,14 @@ const path = require("path"); //modulo path para obtener los path de los archivo
 const exphbs = require("express-handlebars"); //handlebars para los templates html que se van a renderizar
 const override = require("method-override"); //override es para sobreescribir los metodos de los formularios y agregarles más como put y delete
 const session = require("express-session"); //session para mantener las sesiones de los usuarios y no pedir relogin
+const cFlash = require("connect-flash");
 
 //Inicializaciones
 const application = express(); //aquí inicializamos express
 require("./database"); //con esta linea invocamos el archivo database que se conecta a la base de datos
 
 //Configuración
-application.set("port", process.env.PORT || 5500); //configuramos el puerto y con process.env.PORT agarramos un puerto de internet si hubiese el caso
+application.set("port", process.env.PORT || 5000); //configuramos el puerto y con process.env.PORT agarramos un puerto de internet si hubiese el caso
 application.set("views", path.join(__dirname,"views")); //aquí le decimos a la express donde se ubica la carpeta de vistas
 //aquí configuramos los handlebars para que puedan renderizarse despues
 application.engine(".hbs", exphbs.engine({
@@ -26,18 +27,22 @@ application.use(express.urlencoded({
     extended:false
 }));
 application.use(override("_method")); //Sobreescribir los metodos
-
 //aqui configuramos la session en express
 application.use(session({
     secret:"honokasubaru",
     resave: true,
     saveUninitialized: true
 }));
+application.use(cFlash());
 
 //Variables Globales
+application.use((req,res,next)=>{
+    res.locals.successMsg   = req.flash("successMsg");
+    res.locals.errorMsg   = req.flash("errorMsg");
+    next();
+});
 
 //Rutas
-
 //obtenemos las rutas exportadas de cada archivo de rutas
 application.use(require("./routes/main.js"));
 application.use(require("./routes/tasks.js"));

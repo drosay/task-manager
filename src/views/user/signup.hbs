@@ -1,0 +1,27 @@
+{{> errors}}
+<div class="col-4 mx-auto">
+    <div class="card">
+        <div class="card-header">
+            <h4>Registro de usuario</h4>
+        </div>
+        <div class="card-body">
+            <form action="/usuario/registro" method="POST">
+                <div class="form-group">
+                    <label for="username">Nombre de usuario</label>
+                    <input class="form-control" type="text" name="username" placeholder="username" id="username" required value="{{username}}">
+                </div>
+                <div class="form-group">
+                    <label for="password">Contraseña</label>
+                    <input class="form-control" type="password" name="password" placeholder="contraseña" id="password" required value="{{password}}">
+                </div>
+                <div class="form-group">
+                    <label for="secondPass">Repita su contraseña</label>
+                    <input class="form-control" type="password" name="secondPass" placeholder="contraseña" id="secondPass" required value="{{secondPass}}">
+                </div>
+                <div class="d-grid mt-2">
+                    <button class="btn btn-success btn-block btn-sm" type="submit">Registrarse</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
