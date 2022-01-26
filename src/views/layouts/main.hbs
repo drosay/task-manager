@@ -11,9 +11,23 @@
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <!-- MIS CSS -->
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        body{
+            padding:10px;
+        }
+    </style>
 </head>
 <body>
-    <h1 class="main"><a href="/">Gestor de Tareas</a></h1>
+    <div class="nav nav-pills justify-content-between">
+        <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/">Gestor de Tareas</a>
+        </li>
+        {{> user}}
+    </div>
     <main class="container">
         <h2 id="phrases"></h2>
         <hr>

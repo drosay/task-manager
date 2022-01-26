@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 mongoose.connect("mongodb://localhost/task-app")
-.then(db => console.log("Se ha conectado la base de datos"))
+.then(res => console.log("Se ha conectado la base de datos"))
 .catch(error=>console.log(error));
 
 /*,{
